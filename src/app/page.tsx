@@ -20,7 +20,8 @@ export default function Home() {
       width: String(width),
       height: String(height),
     });
-    return `/api/render?${params.toString()}`;
+    const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+    return `${basePath}/api/render?${params.toString()}`;
   }
 
   function handleGenerate() {
